@@ -48,6 +48,15 @@ public class CentroManager
         }
         return s;
     }
+
+    public double getCoverage() {
+        double n = getPersonaSize();
+
+        if(n==0.0)
+            return 0.0;
+
+        return ((double)(getPartialVaxxSize()+getCompleteVaxxSize()))/n;
+    }
 }
 
 // vim: set et:

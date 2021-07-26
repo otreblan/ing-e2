@@ -48,11 +48,12 @@ public class App
         while(true) {
             logger.info(
                 "(0) Exit\n" +
-                "(1) Partial #\n" +
-                "(2) Complete #\n" +
+                "(1) Partial Vaxx #\n" +
+                "(2) Complete Vaxx #\n" +
                 "(3) Centro #\n" +
                 "(4) Create Centro #\n" +
-                "(5) Delete Centro #\n"
+                "(5) Delete Centro #\n" +
+                "(6) Coverage #\n"
             );
             int action = scanner.nextInt();
             boolean exit = false;
@@ -82,6 +83,12 @@ public class App
 
                 case 5:
                     centroManager.deleteCentro(centroManager.getCentroSize()-1);
+                    break;
+
+                case 6:
+                    if(logger.isLoggable(Level.INFO)) {
+                        logger.info(Double.toString(centroManager.getCoverage()));
+                    }
                     break;
 
                 case 0:
