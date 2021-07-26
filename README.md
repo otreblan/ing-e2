@@ -1,3 +1,3 @@
 ```bash
-mvn exec:java -Dexec.mainClass="e2.App"
+mvn exec:java -Dexec.mainClass="ing.e2.App"
 ```
