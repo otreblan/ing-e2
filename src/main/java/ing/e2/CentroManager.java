@@ -55,7 +55,7 @@ public class CentroManager
         if(n==0.0)
             return 0.0;
 
-        return ((double)(getPartialVaxxSize()+getCompleteVaxxSize()))/n;
+        return (getPartialVaxxSize()+getCompleteVaxxSize())/n;
     }
 }
 

@@ -37,6 +37,47 @@ public class App
         return goodPassword(usuario, password);
     }
 
+    private static boolean executeAction(CentroManager centroManager, int action) {
+        switch(action) {
+            case 1:
+                if(logger.isLoggable(Level.INFO)) {
+                    logger.info(Integer.toString(centroManager.getPartialVaxxSize()));
+                }
+                break;
+
+            case 2:
+                if(logger.isLoggable(Level.INFO)) {
+                    logger.info(Integer.toString(centroManager.getCompleteVaxxSize()));
+                }
+                break;
+
+            case 3:
+                if(logger.isLoggable(Level.INFO)) {
+                    logger.info(Integer.toString(centroManager.getCentroSize()));
+                }
+                break;
+
+            case 4:
+                centroManager.addNewCentro();
+                break;
+
+            case 5:
+                centroManager.deleteCentro(centroManager.getCentroSize()-1);
+                break;
+
+            case 6:
+                if(logger.isLoggable(Level.INFO)) {
+                    logger.info(Double.toString(centroManager.getCoverage()));
+                }
+                break;
+
+            case 0:
+            default:
+                return true;
+        }
+        return false;
+    }
+
     public static void main( String[] args )
     {
         if(!login()) {
@@ -55,49 +96,8 @@ public class App
                 "(5) Delete Centro #\n" +
                 "(6) Coverage #\n"
             );
-            int action = scanner.nextInt();
-            boolean exit = false;
 
-            switch(action) {
-                case 1:
-                    if(logger.isLoggable(Level.INFO)) {
-                        logger.info(Integer.toString(centroManager.getPartialVaxxSize()));
-                    }
-                    break;
-
-                case 2:
-                    if(logger.isLoggable(Level.INFO)) {
-                        logger.info(Integer.toString(centroManager.getCompleteVaxxSize()));
-                    }
-                    break;
-
-                case 3:
-                    if(logger.isLoggable(Level.INFO)) {
-                        logger.info(Integer.toString(centroManager.getCentroSize()));
-                    }
-                    break;
-
-                case 4:
-                    centroManager.addNewCentro();
-                    break;
-
-                case 5:
-                    centroManager.deleteCentro(centroManager.getCentroSize()-1);
-                    break;
-
-                case 6:
-                    if(logger.isLoggable(Level.INFO)) {
-                        logger.info(Double.toString(centroManager.getCoverage()));
-                    }
-                    break;
-
-                case 0:
-                default:
-                    exit = true;
-                    break;
-            }
-
-            if(exit) {
+            if(executeAction(centroManager, scanner.nextInt())) {
                 break;
             }
         }
