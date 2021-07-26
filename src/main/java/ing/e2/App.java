@@ -37,6 +37,42 @@ public class App
         if(!login()) {
             System.exit(1);
         }
+
+        CentroManager centroManager = new CentroManager();
+
+        while(true) {
+            logger.info(
+                "(0) Exit\n" +
+                "(1) Partial #\n" +
+                "(2) Complete #\n" +
+                "(3) Centro #\n"
+            );
+            int action = scanner.nextInt();
+            boolean exit = false;
+
+            switch(action) {
+                case 1:
+                    logger.info(Integer.toString(centroManager.getPartialVaxxSize()));
+                    break;
+
+                case 2:
+                    logger.info(Integer.toString(centroManager.getCompleteVaxxSize()));
+                    break;
+
+                case 3:
+                    logger.info(Integer.toString(centroManager.getCentroSize()));
+                    break;
+
+                case 0:
+                default:
+                    exit = true;
+                    break;
+            }
+
+            if(exit) {
+                break;
+            }
+        }
     }
 }
 
