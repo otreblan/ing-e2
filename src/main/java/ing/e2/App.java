@@ -1,6 +1,7 @@
 package ing.e2;
 
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class App
@@ -23,10 +24,14 @@ public class App
     }
 
     private static boolean login() {
-        logger.info("Usuario: ");
+        if(logger.isLoggable(Level.INFO)) {
+            logger.info("Usuario: ");
+        }
         String usuario = scanner.nextLine();
 
-        logger.info("Contraseña: ");
+        if(logger.isLoggable(Level.INFO)) {
+            logger.info("Contraseña: ");
+        }
         String password = scanner.nextLine();
 
         return goodPassword(usuario, password);
@@ -54,15 +59,21 @@ public class App
 
             switch(action) {
                 case 1:
-                    logger.info(Integer.toString(centroManager.getPartialVaxxSize()));
+                    if(logger.isLoggable(Level.INFO)) {
+                        logger.info(Integer.toString(centroManager.getPartialVaxxSize()));
+                    }
                     break;
 
                 case 2:
-                    logger.info(Integer.toString(centroManager.getCompleteVaxxSize()));
+                    if(logger.isLoggable(Level.INFO)) {
+                        logger.info(Integer.toString(centroManager.getCompleteVaxxSize()));
+                    }
                     break;
 
                 case 3:
-                    logger.info(Integer.toString(centroManager.getCentroSize()));
+                    if(logger.isLoggable(Level.INFO)) {
+                        logger.info(Integer.toString(centroManager.getCentroSize()));
+                    }
                     break;
 
                 case 4:
@@ -70,7 +81,7 @@ public class App
                     break;
 
                 case 5:
-                    centroManager.DeleteCentro(centroManager.getCentroSize()-1);
+                    centroManager.deleteCentro(centroManager.getCentroSize()-1);
                     break;
 
                 case 0:

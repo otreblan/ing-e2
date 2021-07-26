@@ -15,7 +15,7 @@ public class CentroManager
         centros.add(new Centro());
     }
 
-    public void DeleteCentro(int i) {
+    public void deleteCentro(int i) {
         centros.remove(i);
     }
 
