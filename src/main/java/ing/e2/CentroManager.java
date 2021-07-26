@@ -16,6 +16,15 @@ public class CentroManager
         return centros.size();
     }
 
+    /// Obtiene el número de personas.
+    public int getPersonaSize() {
+        int s = 0;
+        for(Centro centro : centros) {
+            s += centro.getPersonaSize();
+        }
+        return s;
+    }
+
     public int getPartialVaxxSize() {
         int s = 0;
         for(Centro centro : centros) {
