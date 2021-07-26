@@ -10,6 +10,11 @@ public class Centro
     public Centro() {
         this.personas = new ArrayList<>();
     }
+
+    /// Obtiene el número de personas.
+    public int getPersonaSize() {
+        return personas.size();
+    }
 }
 
 // vim: set et:
