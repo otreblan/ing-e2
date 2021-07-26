@@ -17,7 +17,7 @@ public class Persona
         this.age   = age;
     }
 
-    public void vax() {
+    public void vaxx() {
         switch(state) {
             case SIN_VACUNA:
                 state = State.VACUNA_PARCIAL;

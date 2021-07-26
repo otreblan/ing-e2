@@ -15,6 +15,26 @@ public class Centro
     public int getPersonaSize() {
         return personas.size();
     }
+
+    public int getPartialVaxxSize() {
+        int s = 0;
+        for(Persona persona : personas) {
+            if(persona.getState() == Persona.State.VACUNA_PARCIAL) {
+                s++;
+            }
+        }
+        return s;
+    }
+
+    public int getCompleteVaxxSize() {
+        int s = 0;
+        for(Persona persona : personas) {
+            if(persona.getState() == Persona.State.VACUNA_COMPLETA) {
+                s++;
+            }
+        }
+        return s;
+    }
 }
 
 // vim: set et:
