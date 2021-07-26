@@ -45,7 +45,9 @@ public class App
                 "(0) Exit\n" +
                 "(1) Partial #\n" +
                 "(2) Complete #\n" +
-                "(3) Centro #\n"
+                "(3) Centro #\n" +
+                "(4) Create Centro #\n" +
+                "(5) Delete Centro #\n"
             );
             int action = scanner.nextInt();
             boolean exit = false;
@@ -61,6 +63,14 @@ public class App
 
                 case 3:
                     logger.info(Integer.toString(centroManager.getCentroSize()));
+                    break;
+
+                case 4:
+                    centroManager.addNewCentro();
+                    break;
+
+                case 5:
+                    centroManager.DeleteCentro(centroManager.getCentroSize()-1);
                     break;
 
                 case 0:

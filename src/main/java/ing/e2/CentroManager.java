@@ -11,6 +11,14 @@ public class CentroManager
         this.centros = new ArrayList<>();
     }
 
+    public void addNewCentro() {
+        centros.add(new Centro());
+    }
+
+    public void DeleteCentro(int i) {
+        centros.remove(i);
+    }
+
     /// Obtiene el número de centros.
     public int getCentroSize() {
         return centros.size();
